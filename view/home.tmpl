@@ -1,0 +1,36 @@
+{{ define "home"}}
+{{template "head"}}
+
+    <a name="" id="" class="btn btn-primary" href="/create" role="button">Adicionar contato</a>
+    </br></br>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        {{ range.}}
+            <tr>
+                <td> {{.Id}} </td>
+                <td> {{.Name}} </td>
+                <td> {{.Email}} </td>
+                <td> 
+                <a name="" id="" class="btn btn-warning" href="/edit?id={{.Id}}" role="button">Editar</a>
+                
+                <a name="" id="" class="btn btn-danger" href="/delete?id={{.Id}}" role="button">Apagar</a>
+            </tr>
+
+        {{end}}
+
+        </tbody>
+    </table>      
+
+
+{{template "footer"}}
+{{end}}
